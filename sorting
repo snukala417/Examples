@@ -1,0 +1,32 @@
+def com(a):
+  a.sort()
+  b = []
+  i = 0
+  k = a[0]
+  ln = 1
+  while i<len(a):
+    if i+1 != len(a):
+        print "I"+str(a[i])+str(i)
+        if a[i+1] == a[i]+1:
+            ln = ln+1
+            print "YES"+str(a[i])
+        else:
+            if ln==1:
+                b.append(str(a[i]))
+            else:
+                s = str(k) + '-' + str(a[i])
+                b.append(s)
+                ln = 1
+            k = a[i+1]
+    else:
+        if ln==1:
+            b.append(str(a[i]))
+        else:
+            s = str(k) + '-' + str(a[i])
+            b.append(s)
+    i = i+1
+
+  print b
+
+a = [ 1,4,6,9,10,2,3,14,11,15, 19, 25, 17, 24, 18]
+com(a)
